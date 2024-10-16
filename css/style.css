@@ -1,0 +1,192 @@
+h1, h2 {
+    font-family: Arial, sans-serif;
+    color: #5baad5; /* Blue text */
+}
+
+body {
+    background-color: #f5f2e3; /* lilac background */
+    font-family: Arial, sans-serif;
+    color: #000000; /* Black text */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+nav .hamburger {
+    font-size: 24px; /* Size for the hamburger icon */
+    color: #5baad5; /* Color for the hamburger icon */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px; /* Fixed spacing */
+}
+
+
+footer {
+    display: flex;
+    background-color: #9b6d3e;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ffffff;
+}
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.control-button {
+    background-color: #333;
+    color: #5baad5;
+    border: 1px solid #821717;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.article-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    flex-direction: column;
+}
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px; /* Set a width for the gallery */
+    margin: 0 auto; /* Center the gallery */
+    overflow: hidden; /* Hide overflow */
+}
+.photo-gallery div {
+    display: none; /* Hide all images initially */
+    position: absolute; /* Position them on top of each other */
+}
+.photo-gallery div.active {
+    display: block; /* Show the active image */
+}
+.gallery-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+.control-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+    outline: none;
+}
+
+.article-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    padding: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.advertisement { /* Fixed typo */
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Fixed typo (2o0px to 200px) */
+    gap: 20px; /* Spaces between photos */
+    padding: 20px; /* Fixed spacing */
+}
+
+.photo-img {
+    width: 100%; /* Ensures images are fully responsive within container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px; /* Fixed spacing */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0; /* Fixed spacing */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Fixed spacing */
+}
+
+/* Hamburger Menu Style */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hides regular navigation items on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Shows menu */
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Initially hides navigation options */
+    }
+
+    /* When you click the menu, JavaScript toggles this class to display the options */
+    nav ul.active {
+        display: flex; /* Displays navigation within a column */
+    }
+}

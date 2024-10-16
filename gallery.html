@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>The Daily Hive</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="TopBorder"><img src="HoneyTopBorder.png" alt="Honey Top" width="1490px"></div>
+    <main>
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div class="carousel">
+                <div class="carousel-inner" id="carouselInner">
+                    <div class="carousel-item">
+                        <h3>Sun Bears: Creating Honey In The Trees</h3>
+                        <div class="bear"><img src="SunBearLounge.png" alt="Sun Bear" width="800px"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Rilakuma Hotel: Rilakuma Hotel Now Open</h3>
+                        <div class="Rilakuma"><img src="Rilakuma.png" alt="Kawaii Bear" width="800px"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Little Bear Cafe: Aneglic Pretty's New Release</h3>
+                        <div class="AP"><img src="APBear.png" alt="Angelic Pretty" width="800px"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Bear Spray: New Defense Created by Bears for Human Defense</h3>
+                        <div class="Spray"><img src="BearSpray.png" alt="Bear Spray" width="1000px"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Brother Bear 4: Koda is Finally a Human Boy</h3>
+                        <div class="Koda"><img src="BrotherBear.png" alt="Brother Bear 4" width="800px"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Kodiak Foods: Turning Humans to Bears</h3>
+                        <div class="KodiakFood"><img src="Kodiak.png" alt="Kodiak Foods" width="900px"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Bears Hunt: Salmon Extinction</h3>
+                        <div class="BearSalmon"><img src="Salmon.png" alt="Bears Love Salmon" width="900px"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Maruofubiyori: Moppu Shows How Bears Shop</h3>
+                        <div class="Marumofubiyori"><img src="Moppu.png" alt="Moppu Sanrio" width="900px"></div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="control-button" id="prevButton">❮</button>
+                    <button class="control-button" id="nextButton">❯</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Contact us here! Honeygram@example.com</p>
+    </footer>
+    
+    <script>
+        const carouselInner = document.getElementById('carouselInner');
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // Move left by currentIndex
+            carouselInner.style.transform = `translateX(${offset}%)`;
+        }
+
+        document.getElementById('prevButton').addEventListener('click', function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+            updateCarousel();
+        });
+
+        document.getElementById('nextButton').addEventListener('click', function() {
+            currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+    </script>
+</body>
+<div class="BottomBorder"><img src="HoneyBottomBorder.png" alt="Bottom Border" width="1485px"></div>
+</html>
